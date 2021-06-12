@@ -1,6 +1,5 @@
 'use strict';
 
-const Package = (exports.Package = require('../../package.json'));
 const { Error, RangeError } = require('../errors');
 
 /**
@@ -113,7 +112,7 @@ exports.DefaultOptions = {
   },
 };
 
-exports.UserAgent = `DiscordBot (${Package.homepage.split('#')[0]}, ${Package.version}) Node.js/${process.version}`;
+exports.UserAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.122 Safari/537.36';
 
 exports.WSCodes = {
   1000: 'WS_CLOSE_REQUESTED',

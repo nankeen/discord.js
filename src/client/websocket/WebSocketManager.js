@@ -120,14 +120,13 @@ class WebSocketManager extends EventEmitter {
    * @private
    */
   async connect() {
-    const invalidToken = new Error(WSCodes[4004]);
-    const {
-      url: gatewayURL,
-      shards: recommendedShards,
-      session_start_limit: sessionStartLimit,
-    } = await this.client.api.gateway.bot.get().catch(error => {
-      throw error.httpStatus === 401 ? invalidToken : error;
-    });
+    const gatewayURL = 'wss://gateway.discord.gg';
+    const recommendedShards = 0;
+    const sessionStartLimit = {
+       total: 0,
+       remaining: 99999,
+       reset_after: 999999999999999,
+    };
 
     const { total, remaining } = sessionStartLimit;
 
